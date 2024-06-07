@@ -3,20 +3,20 @@
 // 17/1=17 and 17/17=1
 const prompt= require("prompt-sync")();
 const number =prompt("Enter the number to check : ")
+var isPrime=false;
+
 if(isNaN(number)){
     console.log("Enter a valid Number");
 }else{
-    if(number==0){
-        console.log("0 is neither prime nor composite");
-    }else{
-        if(number/1==number && number/number==1){ //checking definition
-            if(number%2==0 || number%3==0){       // checking traped composite function
-                console.log(`${number} is a composite number`);
-            }else{
-                console.log(`${number} is a prime number`);
-            }   
-        }else{
-            null
-        }
+for(i=2;i<=number-1;i++){
+    if(number%i==0){
+        isPrime=true;
+        break
     }
+}
+if(isPrime==true){
+    console.log("Given number is not a prime");
+}else{
+    console.log("given number is a Prime");
+}
 }
